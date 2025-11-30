@@ -24,7 +24,7 @@ npm i ts-node-dev
 or
 
 npm i -D tsx
-package.json: "npx tsx ./src/server.ts"
+package.json: "npx tsx watch ./src/server.ts"
 
 # 7. Install dotenv (for environment variables)
 npm i dotenv
