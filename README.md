@@ -1,6 +1,6 @@
 ## 🛠 Project Setup Commands
 
-এই প্রজেক্টে TypeScript এবং Express ব্যবহার করার জন্য নিচের কমান্ডগুলো রান করতে হবে:
+TypeScript এবং Express :
 
 ```bash
 # 1. Initialize NPM
@@ -30,4 +30,4 @@ package.json: "npx tsx watch ./src/server.ts"
 npm i dotenv
 ```
 
-✅ এখন তুমি `TypeScript + Express Server` তৈরি করার জন্য পুরোপুরি রেডি।
+`TypeScript + Express Server`
