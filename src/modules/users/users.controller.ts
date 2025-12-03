@@ -10,9 +10,7 @@ import {
 // Create user
 export const createUserController = async (req: Request, res: Response) => {
   try {
-    const { name, email, address } = req.body;
-
-    const user = await createUserService(name, email, address);
+    const user = await createUserService(req.body);
 
     res.status(201).json({
       success: true,

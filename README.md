@@ -28,6 +28,12 @@ package.json: "npx tsx watch ./src/server.ts"
 
 # 7. Install dotenv (for environment variables)
 npm i dotenv
+
+# 8. Install bcrypt js(for hash password)
+npm i bcryptjs
+
+# 9. Install jwt js(for user auth)
+npm i jsonwebtoken
 ```
 
 `TypeScript + Express Server`
