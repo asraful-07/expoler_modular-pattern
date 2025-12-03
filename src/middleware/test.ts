@@ -2,8 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import config from "../config";
 
-//TODO roles = ["admin", "user"]
-const auth = (...roles: string[]) => {
+const ab = (...roles: string[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
       const token = req.headers.authorization;
@@ -15,22 +14,13 @@ const auth = (...roles: string[]) => {
       const decoded = jwt.verify(token, config.token as string) as JwtPayload;
 
       req.user = decoded;
-
-      //* ["admin"] include no role no allow
       if (roles.length && !roles.includes(decoded.role as string)) {
-        return res.status(403).json({
-          error: "Forbidden",
-        });
+        return res.status(403).json({ message: "Forbidden" });
       }
 
       next();
-    } catch (err: any) {
-      res.status(500).json({
-        success: false,
-        message: err.message,
-      });
+    } catch (error: any) {
+      res.status(500).json({ message: "Internal server error" });
     }
   };
 };
-
-export default auth;

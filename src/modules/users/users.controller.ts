@@ -17,7 +17,8 @@ export const createUserController = async (req: Request, res: Response) => {
       data: user,
       message: "User created successfully",
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.log(error.message);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
